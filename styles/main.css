@@ -1,0 +1,36 @@
+body {
+    background-color: green;
+}
+
+h1, p{
+    font-size: 50px;
+}
+
+button {
+    background-color: salmon;
+    border: solid slateblue 2px;
+    border-radius: 10%;
+    font-size: 20px;
+}
+
+img {
+    width: 20vh;
+}
+
+#start-again {
+    display: none;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    border: solid red 10px;
+    height: 75vh;
+    width: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#ace-buttons {
+    display: none;
+}

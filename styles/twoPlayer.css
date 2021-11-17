@@ -1,0 +1,52 @@
+body {
+    background-color: indigo;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+h1, p{
+    font-size: 50px;
+}
+
+button {
+    background-color: salmon;
+    border: solid slateblue 2px;
+    border-radius: 10%;
+    font-size: 20px;
+}
+
+#start-again {
+    display: none;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    border: solid powderblue 10px;
+    height: 50vh;
+    width: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.scorecard {
+    padding: 15px;
+}
+
+.win-tracker {
+    font-size: 30px;
+    padding: 15px;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.wins-counter {
+    width: 50vh;
+}
