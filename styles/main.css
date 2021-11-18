@@ -34,3 +34,22 @@ img {
 #ace-buttons {
     display: none;
 }
+
+.scorecard {
+    padding: 15px;
+}
+
+.win-tracker {
+    font-size: 30px;
+    padding: 15px;
+}
+
+.content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.wins-counter {
+    width: 50vh;
+}

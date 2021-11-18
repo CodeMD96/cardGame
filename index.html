@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS Dice Game</title>
+    <title>JS Card Game</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
 </head>
 <body>
     <div>
+        <div class="content-row wins-counter">
+            <div>
+                <p class="win-tracker">Player 1: 0</p>
+            </div>
+            <div>
+                <p class="win-tracker">Player 2: 0</p>
+            </div>
+        </div>
         <div id="container">
             <div>
                 <button id="start-again">A</button>
@@ -14,14 +22,26 @@
             <div>
                 <h1 id="heading">Player 1</h1>
             </div>
-            <div>
-                <p id="score-card">0</p>
+            <div class="content-row">
+                <div>
+                    <p class="scorecard">0</p>
+                </div>
+                <div>
+                    <p class="scorecard">0</p>
+                </div>
             </div>
             <div>
                 <img id="card-img">
             </div>
+            <div class="content-row">
+                <div>
+                    <button id="draw" class="play-button">Draw</button>
+                </div>
+                <div>
+                    <button id="hold" class="play-button">Hold</button>
+                </div>
+            </div>
             <div>
-                <button id="roll">Roll</button>
                 <div id="ace-buttons">
                     <button id="one">1</button>
                     <button id="eleven">11</button>
@@ -29,6 +49,6 @@
             </div>
         </div>
     </div>
-    <script src="scripts/scriptOnePlayer.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
