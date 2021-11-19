@@ -31,10 +31,17 @@ const scoreUpdate = () =>{
     scoreCard[currentPlayer].innerHTML = scores[currentPlayer];
 
     if (scores[currentPlayer] == 21) {
-        playerWins[`${currentPlayer}`] ++;
-        gameCounter[`${currentPlayer}`].innerHTML = `Player ${currentPlayer+1}: ${playerWins[currentPlayer]}`;
-        heading.innerHTML = `Player ${currentPlayer+1} wins!`;
-        reset();
+        if (currentPlayer == 0) {
+            playerChange();
+        } else if (scores[0] < 21) {
+            playerWins[`${currentPlayer}`] ++;
+            gameCounter[`${currentPlayer}`].innerHTML = `Player ${currentPlayer+1}: ${playerWins[currentPlayer]}`;
+            heading.innerHTML = `Player ${currentPlayer+1} wins!`;
+            reset();
+        } else {
+            heading.innerHTML = "Tie!";
+            reset();
+        };    
     } else if (scores[currentPlayer] > 21) {
         if (currentPlayer == 0) {
             playerWins[1] ++;
@@ -71,23 +78,28 @@ const reset = () =>{
 }
 
 draw.addEventListener("click", () =>{
-    let randomValue = Math.floor(Math.random()*13);
-    let randomSuit = Math.floor(Math.random()*4);
+    const cardPicker = () => {
+        let randomValue = Math.floor(Math.random()*13);
+        let randomSuit = Math.floor(Math.random()*4);
 
-    if (picked.includes(`images/${values[randomValue]}_of_${suits[randomSuit]}.png`) == false) {
-        if (values[randomValue] === "ace") {
-            aceFunc();
-        } else if (typeof values[randomValue] === 'string') {
-            cardScore = 10;
-            scoreUpdate();
-        } else {
-            cardScore = values[randomValue];
-            scoreUpdate();
-        };
+        if (picked.includes(`images/${values[randomValue]}_of_${suits[randomSuit]}.png`) == false) {
+            if (values[randomValue] === "ace") {
+                aceFunc();
+            } else if (typeof values[randomValue] === 'string') {
+                cardScore = 10;
+                scoreUpdate();
+            } else {
+                cardScore = values[randomValue];
+                scoreUpdate();
+            };
     
-        cardImg.src = `images/${values[randomValue]}_of_${suits[randomSuit]}.png`;
-        picked.push(`images/${values[randomValue]}_of_${suits[randomSuit]}.png`);
+            cardImg.src = `images/${values[randomValue]}_of_${suits[randomSuit]}.png`;
+            picked.push(`images/${values[randomValue]}_of_${suits[randomSuit]}.png`);
+        } else {
+            cardPicker();
+        };
     };
+    cardPicker();
 });
 
 oneButton.addEventListener("click", () => {
